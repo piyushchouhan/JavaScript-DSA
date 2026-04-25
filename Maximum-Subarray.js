@@ -1,4 +1,4 @@
-// Find the contigous subarray (containing at least one number) which has the larget sum, and return its sum
+// Find the contiguous subarray (containing at least one number) which has the largest sum, and return its sum
 // Kadane's algorithm
 
 function maxSubArray(nums){
