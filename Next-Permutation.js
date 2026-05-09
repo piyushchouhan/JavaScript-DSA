@@ -7,6 +7,7 @@
 
 // Input: nums = [3,2,1]
 // Output: [1,2,3]
+// Solution
 
 function nextPermutation(nums) {
     let i = nums.length - 2;
