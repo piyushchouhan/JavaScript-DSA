@@ -4,7 +4,7 @@ function groupAnagrams(words){
     for(let word of words){
         let key = word.split('').sort().join('');
         if(!map.has(key)){
-            map.set(key, [])
+            map.set(key, [word])
         }else{
             map.get(key).push(word);
         }

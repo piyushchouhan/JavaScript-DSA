@@ -9,6 +9,7 @@ class ListNode {
 }
 
 function deleteDuplicates(head){
+    // Create a dummy node to handle edge cases where the head might be removed
     let dummy = new ListNode(0);
     dummy.next = head;
 
@@ -19,11 +20,11 @@ function deleteDuplicates(head){
         if(head.next !== null && head.val === head.next.val){
             let duplicateVal = head.val;
 
-        while(head != null && head.val === duplicateVal){
-            head = head.next;
-        }
+            while(head != null && head.val === duplicateVal){
+                head = head.next;
+            }
 
-        prev.next = head; // remove duplicates
+            prev.next = head; // remove duplicates
         }else{
             prev = prev.next;
             head = head.next;
