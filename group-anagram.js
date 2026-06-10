@@ -1,3 +1,10 @@
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+
 function groupAnagrams(words){
     let map = new Map();
 
@@ -13,4 +20,12 @@ function groupAnagrams(words){
     return Array.from(map.values());
 }
 
-console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]));
+
+rl.question('your input: ',
+    (input) => {
+        const words = input.trim().split(" ");
+
+        const result = groupAnagrams(words);
+        console.log("grouped anagrams: ", result);
+        rl.close;
+});
