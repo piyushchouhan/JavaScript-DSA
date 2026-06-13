@@ -1,3 +1,10 @@
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
 function insertionSort(arr) {
     for(let i = 1; i < arr.length;i++){
         let key = arr[i];
@@ -13,7 +20,16 @@ function insertionSort(arr) {
     }
 }
 
-// Example usage:
-let arr = [12, 11, 13, 5, 6];
-insertionSort(arr);
-console.log("Sorted array: " + arr);
+rl.question('Enter numbers separated by space: ', (input) => {
+    let arr = input.trim().split(/\s+/).map(Number);
+    
+    if (arr.some(isNaN)) {
+        console.log("Please enter valid numbers.");
+    } else {
+        insertionSort(arr);
+        console.log("Sorted array: " + arr);
+    }
+    
+    rl.close();
+});
+
